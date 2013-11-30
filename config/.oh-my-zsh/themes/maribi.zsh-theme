@@ -9,7 +9,7 @@ closed_brackets=%{$red%}]$reset_color;
 at=%{$red%}@$reset_color;
 
 line=%{$orange%}----$reset_color;
-arrow="%{$orange%}=>$reset_color";
+arrow="%{$red%}=>$reset_color";
 
 dir="%{$orange%}%d$reset_color"; 
 time="$green%}%D{%T %Z}$reset_color%}"
