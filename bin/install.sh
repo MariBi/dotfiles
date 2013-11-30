@@ -17,8 +17,12 @@ function linkDotfile {
          rm $destination
    fi
    ln -s $source $destination;
+   echo $destination;
 }
 
+wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | bash;
+
+echo 'Copy dotfiles';
 for dotfile in `find -type f `; do
     linkDotfile $dotfile;
 done
