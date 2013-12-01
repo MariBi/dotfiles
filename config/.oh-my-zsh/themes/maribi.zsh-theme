@@ -2,20 +2,22 @@ red=$FG[160]
 green=$FG[002]  
 orange=$FG[136]
 
-open_brackets=%{$red%}[$reset_color; 
-closed_brackets=%{$red%}]$reset_color; 
-at=%{$orange%}@$reset_color;
+open_brackets=%{$red%}[%{$reset_color%}; 
+closed_brackets=%{$red%}]%{$reset_color%}; 
+at=%{$orange%}@%{$reset_color%};
+arrow=%{$red%}"➜"%{$reset_color%};
 
+dir="%{$orange%}%~%{$reset_color%}"; 
+time="%{$green%}%D{%T %Z}%{$reset_color%}"
+date="%{$green%}%D{%Y-%m-%d}%{$reset_color%}"
+week="%{$green%}KW%D{%V}%{$reset_color%}"
+maschine="%{$orange%}%m%{$reset_color%}"
+user="%{$orange%}%n%{$reset_color%}"
+historynumber="$open_brackets%{$green%}%h%{$reset_color%}$closed_brackets"
 
-end=%{$red%}"➜"$reset_color;
+PROMPT='
+$user$at$maschine $dir 
+$historynumber$arrow ';
 
-dir="%{$orange%}%d$reset_color"; 
-time="$green%}%D{%T %Z}$reset_color%}"
-date="$green%}%D{%Y-%m-%d}$reset_color%}"
-week="$green%}KW%D{%V}$reset_color%}"
-maschine="$orange%}%m$reset_color%}"
-user="$orange%}%n$reset_color%}"
-historynumber="$open_brackets%{$green%}%h$reset_color$closed_brackets"
-PROMPT="
-$open_brackets$date $time $week$closed_brackets $user$at$maschine 
-$historynumber$dir $end "
+RPROMPT='$open_brackets$date $time $week$closed_brackets';
+
