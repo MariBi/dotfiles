@@ -16,8 +16,8 @@ user="%{$orange%}%n%{$reset_color%}"
 historynumber="$open_brackets%{$green%}%h%{$reset_color%}$closed_brackets"
 
 PROMPT='
-$user$at$maschine $dir 
-$historynumber$arrow ';
+$user$at$maschine 
+$historynumber$dir $arrow ';
 
 RPROMPT='$open_brackets$date $time $week$closed_brackets';
 
