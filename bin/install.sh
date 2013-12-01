@@ -8,6 +8,9 @@ function linkDotfile {
    destination=~/$1;
    backup=../backup/$1;
 
+   if [ ! -e "../backup"  ];then
+   	mkdir ../backup;
+   fi
    if [ -h "$destination" ];then
         rm $destination;
    fi
@@ -23,6 +26,6 @@ function linkDotfile {
 wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | bash;
 
 echo 'Copy dotfiles';
-for dotfile in `find -type f `; do
+for dotfile in `find .  -type f `; do
     linkDotfile $dotfile;
 done
